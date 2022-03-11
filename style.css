@@ -273,3 +273,11 @@ body {
     margin: 80px 0;
     margin-top: 8px;
 } /* to be added after create-element in javascript  */
+.tweet{
+    margin-top: 20px;
+}
+.tweet .tweet_content a{
+    text-decoration: none;
+    color: var(--blue);
+    font-weight: 500;
+}

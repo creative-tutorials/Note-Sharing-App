@@ -25,22 +25,26 @@ const date = new Date(); //getting todays date
 const day = date.getDate(); //getting today's full date with getDate function
 const month = date.getMonth() + 1; //getting today's month with getMonth function
 const year = date.getFullYear();//getting current year in full with getFullYear function
+console.log(day);
 
-const monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
+const monthNames = ["Jan", "Feb", "Mar", "April", "May", "Jun",
+  "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"
 ]; //calling all the months
-
 const d = new Date(); //getting todays date
 let fullMonth = monthNames[d.getMonth()]
 console.log(fullMonth + ' ' + year);
-//calling fullmonth and appending it to tdoo
+
+var days = ['Sun','Mon','Tues','Wed','Thurs','Fri','Sat']; //setting the days of the week in an array
+var day2 = days[ date.getDay() ];
+console.log(day2);
+
 window.onbeforeunload = function() {
     return true;
 }
-let tdoo = { "Header": textarea.value, "Body": input.value, "category": input2.value, "Dates": fullMonth + year} //getting full information from called properties
+let tdoo = { "Header": textarea.value, "Body": input.value, "category": input2.value, "Dates": day2 + ' ' + fullMonth + ' ' + year} //getting full information from called properties
 
 save_btn.addEventListener("click", () => { //save button onclick
-    let tdoo = { "Header": textarea.value, "Body": input.value, "category": input2.value, "Dates": fullMonth + year} //getting full information from called properties
+    let tdoo = { "Header": textarea.value, "Body": input.value, "category": input2.value, "Dates": day2 + ' ' + fullMonth + ' ' + year} //getting full information from called properties
         let appendNote = document.createElement("div");
         notepad.appendChild(appendNote);
         console.log(message_text); //custom note message for saving
@@ -68,6 +72,11 @@ save_btn.addEventListener("click", () => { //save button onclick
                         <div class="date" id="date">${tdoo.Dates}</div>
                     </div>
                 </div>
+                <div class="tweet">
+                <div class="tweet_content">
+                    <a href="https://twitter.com/intent/tweet?url=${tdoo.Body + ' ' + tdoo.Header}" rel="noopener" class="tweet_btn">Tweet <i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
             </div>
         </div>`
         }, 2000);
@@ -91,6 +100,11 @@ save_btn.addEventListener("click", () => { //save button onclick
                         <div class="date" id="date">${tdoo.Dates}</div>
                     </div>
                 </div>
+                <div class="tweet">
+                <div class="tweet_content">
+                    <a href="https://twitter.com/intent/tweet?url=${tdoo.Body + ' ' + tdoo.Header}" rel="noopener" class="tweet_btn">Tweet <i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
             </div>
         </div>`
         });
@@ -125,14 +139,17 @@ color_purple.addEventListener("click", function(event) {
 category1.addEventListener("click", (e) => {
     console.log(e.target);
     document.getElementById("category").innerHTML = `${cat1}`
+    input2.value = `${cat1}`;
 });
 category2.addEventListener("click", (e) => {
     console.log(e.target);
     document.getElementById("category").innerHTML = `${cat2}`
+    input2.value = `${cat2}`;
 });
 category3.addEventListener("click", (e) => {
     console.log(e.target);
     document.getElementById("category").innerHTML = `${cat3}`
+    input2.value = `${cat3}`;
 });
 // categories button to change the note category
 
