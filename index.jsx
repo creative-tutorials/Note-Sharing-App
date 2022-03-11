@@ -35,22 +35,6 @@ let fullMonth = monthNames[d.getMonth()]
 console.log(fullMonth + ' ' + year);
 //calling fullmonth and appending it to tdoo
 
-// var myString = textarea.value;
-// var string_dot = '...';
-// var stringtest = myString.length;
-
-// let prob = myString.substr(0, 9) + string_dot;
-// if(stringtest > 4){
-//     console.log("yo");
-//     console.log(myString.substr(0, 9) + string_dot)
-// }else{
-//     console.log("text not long");
-// } //cut out words if long using substring
-
-// window.onbeforeunload = function() {
-//     return "false";
-// }
-// let header = textarea.value;
 let tdoo = { "Header": textarea.value, "Body": input.value, "category": input2.value, "Dates": fullMonth + year} //getting full information from called properties
 
 save_btn.addEventListener("click", () => { //save button onclick
@@ -70,7 +54,7 @@ save_btn.addEventListener("click", () => { //save button onclick
             
             appendNote.innerHTML = `<div class="note-content">
             <div class="notes">
-                <div class="note-title" id="ntx" onclick="Send()">${tdoo.Body}</div>
+                <div class="note-title" id="ntx">${tdoo.Body}</div>
                 <div class="note-pfx">
                     <p class="note-sub">${tdoo.Header}</p>
                 </div>
@@ -93,7 +77,7 @@ save_btn.addEventListener("click", () => { //save button onclick
             input2.value = tdoo.category;
             appendNote.innerHTML = `<div class="note-content">
             <div class="notes">
-                <div class="note-title" id="ntx" onclick="Send()">${tdoo.Body}</div>
+                <div class="note-title" id="ntx">${tdoo.Body}</div>
                 <div class="note-pfx">
                     <p class="note-sub">${tdoo.Header}</p>
                 </div>
@@ -159,6 +143,3 @@ document.getElementById("return").addEventListener("click", function(event) {
     document.querySelector(".container").style.display = "none";
     document.querySelector(".wrapper").style.display = "block"; //returning back to the main note page
 });
-function Send() {
-    console.log("sh")
-}
