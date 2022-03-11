@@ -34,7 +34,9 @@ const d = new Date(); //getting todays date
 let fullMonth = monthNames[d.getMonth()]
 console.log(fullMonth + ' ' + year);
 //calling fullmonth and appending it to tdoo
-
+window.onbeforeunload = function() {
+    return true;
+}
 let tdoo = { "Header": textarea.value, "Body": input.value, "category": input2.value, "Dates": fullMonth + year} //getting full information from called properties
 
 save_btn.addEventListener("click", () => { //save button onclick
