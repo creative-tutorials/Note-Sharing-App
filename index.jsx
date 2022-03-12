@@ -52,7 +52,7 @@ save_btn.addEventListener("click", () => { //save button onclick
             console.clear(); //clearing the console
         }, 1000);
         setTimeout(() => {
-            localStorage.setItem("Storage", JSON.stringify(tdoo)); //setting localstorage and adding a "Storage" handler, stringifying the called tdoo element
+            localStorage.setItem("Storage", JSON.stringify(tdoo)); //setting localstorage and adding a "Storage" item, stringifying the called tdoo element
             var retrieveData = JSON.parse(localStorage.getItem("Storage")); //localstorage now is getting the setItem of tdoo and parsing to the set "Storage" Item of localStorage
             console.log(retrieveData);
             // console.error(tdoo.Body);
