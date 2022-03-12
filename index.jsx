@@ -25,21 +25,21 @@ const date = new Date(); //getting todays date
 const day = date.getDate(); //getting today's full date with getDate function
 const month = date.getMonth() + 1; //getting today's month with getMonth function
 const year = date.getFullYear();//getting current year in full with getFullYear function
-console.log(day);
+console.log(day); //logging date to the console
 
 const monthNames = ["Jan", "Feb", "Mar", "April", "May", "Jun",
   "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"
 ]; //calling all the months
 const d = new Date(); //getting todays date
 let fullMonth = monthNames[d.getMonth()]
-console.log(fullMonth + ' ' + year);
+console.log(fullMonth + ' ' + year); //logging fullmonth and year to the console
 
 var days = ['Sun','Mon','Tues','Wed','Thurs','Fri','Sat']; //setting the days of the week in an array
 var day2 = days[ date.getDay() ];
-console.log(day2);
+console.log(day2); //loggging the current day of the week to the console
 
 window.onbeforeunload = function() {
-    return true;
+    return true; //prevening page from loading
 }
 let tdoo = { "Header": textarea.value, "Body": input.value, "category": input2.value, "Dates": day2 + ' ' + fullMonth + ' ' + year} //getting full information from called properties
 
@@ -49,11 +49,11 @@ save_btn.addEventListener("click", () => { //save button onclick
         notepad.appendChild(appendNote);
         console.log(message_text); //custom note message for saving
         setTimeout(() => {
-            console.clear();
+            console.clear(); //clearing the console
         }, 1000);
         setTimeout(() => {
             localStorage.setItem("Storage", JSON.stringify(tdoo)); //setting localstorage and adding a "Storage" handler, stringifying the called tdoo element
-            var retrieveData = JSON.parse(localStorage.getItem("Storage")); //localstorage now is getting the setItem of tdoo
+            var retrieveData = JSON.parse(localStorage.getItem("Storage")); //localstorage now is getting the setItem of tdoo and parsing to the set "Storage" Item of localStorage
             console.log(retrieveData);
             // console.error(tdoo.Body);
             // console.log(textarea.value);
