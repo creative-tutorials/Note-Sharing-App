@@ -111,9 +111,7 @@ save_btn.addEventListener("click", () => { //save button onclick
 
 const add_color = (cname) => {
   const colors = ["blue", "red", "green", "purple"];
-  colors.filter(c => c !== cname).map(c => {
-    textarea.classList.remove(c);
-  });
+  colors.filter(c => c !== cname).map(c => textarea.classList.remove(c));
   textarea.classList.add(cname);
 };
 
