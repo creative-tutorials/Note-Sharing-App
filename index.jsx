@@ -108,33 +108,30 @@ save_btn.addEventListener("click", () => { //save button onclick
             </div>
         </div>`
         });
+
+const add_color = (cname) => {
+  const colors = ["blue", "red", "green", "purple"];
+  colors.filter(c => c !== cname).map(c => {
+    textarea.classList.remove(c);
+  });
+  textarea.classList.add(cname);
+};
+
 color_red.addEventListener("click", function(event) {
     console.log(event.target);
-    textarea.classList.add("red");
-    textarea.classList.remove("blue");
-    textarea.classList.remove("green");
-    textarea.classList.remove("purple");
+    add_color("red");
 })
 color_blue.addEventListener("click", function(event) {
     console.log(event.target);
-    textarea.classList.add("blue");
-    textarea.classList.remove("red");
-    textarea.classList.remove("green");
-    textarea.classList.remove("purple");
+    add_color("blue");
 })
 color_green.addEventListener("click", function(event) {
     console.log(event.target);
-    textarea.classList.add("green");
-    textarea.classList.remove("blue");
-    textarea.classList.remove("red");
-    textarea.classList.remove("purple");
+    add_color("blue");
 })
 color_purple.addEventListener("click", function(event) {
     console.log(event.target);
-    textarea.classList.add("purple");
-    textarea.classList.remove("blue");
-    textarea.classList.remove("red");
-    textarea.classList.remove("green");
+    add_color("blue");
 })
 category1.addEventListener("click", (e) => {
     console.log(e.target);
